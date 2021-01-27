@@ -71,6 +71,38 @@
                     à ma volonté, un simple git pull m'a suffi pour le mettre à genoux et pour résoudre tous mes problèmes. Le site est maintenant en ligne, mes rapports sont
                     enfin visibles, et 3 petites lignes de codes dans le terminal me permettent de mettre à jour les potentiels changements.
                 </p>
+                <p class="evol">
+                    Voici la démarche à suivre pour ceux qui voudrait à cloner leur projet git sur leur site du DIRO :
+                    <ul>
+                        <li>
+                            First-of-all vous avez besoin de créer votre projet git, avec vos fichiers html et ce dont vous avez besoin pour rouler le site (ex: bootstrap).
+                            Et vous devez aussi avoir une ssh key public généré et lié avec votre compte (cf https://docs.github.com/en/github-ae@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+                        </li>
+                        <li>
+                            Connectez vous sur votre session du diro dans un terminal avec <i>ssh username@arcade.iro.umontreal.ca</i>, puis à <i>ssh ens.iro.umontreal.ca</i>,
+                            ensuite vous devez accéder au dossier lier à votre site web du diro, la commande à rentrer est : <i>cd /home/www-ens/username/public_html</i>.
+                            Vous devriez y trouver un fichier index.html, c'est ce même fichier qui est déjà uploadé et qui apparaît sur votre site déjà en ligne (
+                            http://www-ens.iro.umontreal.ca/~username/).
+                        </li>
+                        <li>
+                            Dans votre repo sur github.com vous pouvez chercher le lien https pour clone le projet git, dans l'onglet vert de la page de présentation de votre
+                            repo. Copiez ce lien.
+                        </li>
+                        <li>
+                            Retournez dans votre terminal connecté au diro, rentrez la commande suivante : <i>git clone lien-https-du-repo</i>. Vous allez peut-être devoir 
+                            rentrer votre mot de passe github. Vous devriez ensuite voir le dossier de votre repo dans le public_html.
+                        </li>
+                        <li>
+                            Votre site est maintenant sur les serveurs du diro et en ligne, il reste une chose à vérifier. Ouvrez un terminal, rendez-vous dans le dossier de votre
+                            ordinateur où se trouve votre repo du site, rentrez <i>git remote -v</i>. Vous devriez voir deux lignes commençant par origin, c'est le projet sur votre
+                            ordinateur, et ensuite deux lignes commençant par server, c'est le clone sur les serveurs du diro. Tout est bon !
+                        </li>
+                        <li>
+                            Dès que vous modieferez vos fichiers html ou autres du repo, pushez les changements au master, reconnectez vous à votre public_html dans le serveur du
+                            diro, dans votre repo effectuez un <i>git pull</i>, et le site en ligne sera mise à jour !
+                        </li>
+                    </ul>
+                </p>
                 <p class="date">14/01 - 20/01</p>
                 <p class="evol">
                     Après une première réunion avec Lena, Simon et Yuning, j'ai pu me mettre à jour sur les premières étapes de l'aventure MONA.
